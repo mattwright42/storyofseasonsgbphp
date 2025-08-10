@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/* Scss Document */
+/* Scss Document */
+/*▼色▼*/
+/*▼BOX▼*/
+/*▼文字▼*/
+/*▼FLEX系▼*/
+/*▼グリッド系▼*/
+header {
+  height: 16rem;
+  width: 100%;
+  position: fixed;
+  z-index: 9000;
+  top: 0;
+  left: 0; }
+  header > .box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 15rem;
+    padding: 3.6rem 0 2.8rem;
+    z-index: 1; }
+
+.header_main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  line-height: 1;
+  position: relative; }
+  .header_main::before, .header_main::after {
+    content: '';
+    display: block;
+    height: 100%;
+    z-index: 9300; }
+  .header_main::before {
+    background: url("../img/flag_l.svg") bottom right/auto 100% no-repeat;
+    bottom: 0;
+    right: 100%; }
+  .header_main::after {
+    background: url("../img/flag_r.svg") bottom left/auto 100% no-repeat;
+    bottom: 0;
+    left: 100%; }
+  .header_main > .box {
+    filter: drop-shadow(0px 6px 0px rgba(0, 0, 0, 0.125));
+    height: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 0 2rem;
+    background-color: #3c2a1c;
+    margin: 0 3rem;
+    border-radius: 1.5rem;
+    padding: 0 1.5rem 1.8rem;
+    z-index: 3;
+    position: relative; }
+    .header_main > .box::before, .header_main > .box::after {
+      content: '';
+      display: block;
+      width: 1.2rem;
+      height: 5.6rem;
+      position: absolute;
+      z-index: 5;
+      background: url("../img/deco_mainmenu.svg") bottom center/cover no-repeat; }
+    .header_main > .box::before {
+      top: -3.6rem;
+      left: 15%; }
+    .header_main > .box::after {
+      top: -3.6rem;
+      right: 15%; }
+  .header_main span {
+    display: block; }
+    .header_main span a {
+      display: inline-block;
+      background-color: #4e3c32;
+      font-size: 2.4rem;
+      font-family: "m-plus-rounded-1c", sans-serif;
+      font-weight: 800;
+      text-decoration: none;
+      color: #fafae6;
+      padding: 0.4em 1em;
+      line-height: 1;
+      transition: 0.4s;
+      border-radius: 100rem; }
+    .header_main span.p00 a:hover {
+      background-color: #c8ebd4;
+      color: #3c2a1c; }
+    .header_main span.p01 a:hover {
+      background-color: #f0d5d5;
+      color: #3c2a1c; }
+    .header_main span.p02 a:hover {
+      background-color: #edd7bd;
+      color: #3c2a1c; }
+    .header_main span.p03 a:hover {
+      background-color: #c3e4e7;
+      color: #3c2a1c; }
+
+body.cat00 .header_main span.p00 a {
+  background-color: #c8ebd4;
+  color: #3c2a1c;
+  pointer-events: none; }
+
+body.cat01 .header_main span.p01 a {
+  background-color: #f0d5d5;
+  color: #3c2a1c;
+  pointer-events: none; }
+
+body.cat02 .header_main span.p02 a {
+  background-color: #edd7bd;
+  color: #3c2a1c;
+  pointer-events: none; }
+
+body.cat03 .header_main span.p03 a {
+  background-color: #c3e4e7;
+  color: #3c2a1c;
+  pointer-events: none; }
+
+.header_sub {
+  line-height: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 1rem; }
+  .header_sub a {
+    color: #3c2a1c;
+    font-size: 2rem;
+    padding: 0 1rem;
+    font-family: "m-plus-rounded-1c", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1; }
+    .header_sub a::after {
+      content: '';
+      margin-top: 1.5rem;
+      display: block;
+      height: 1.4rem;
+      width: 100%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat; }
+    .header_sub a:hover::after {
+      background-image: url("../img/ar_bot_y.svg") !important;
+      transition: 0.4s;
+      transform: rotateY(180deg); }
+
+body.cat00 .header_sub a::after {
+  background-image: url("../img/ar_bot_00.svg"); }
+
+body.cat01 .header_sub a::after {
+  background-image: url("../img/ar_bot_01.svg"); }
+
+body.cat02 .header_sub a::after {
+  background-image: url("../img/ar_bot_02.svg"); }
+
+body.cat03 .header_sub a::after {
+  background-image: url("../img/ar_bot_03.svg"); }
+
+.menu_btn_box {
+  cursor: pointer;
+  display: none;
+  z-index: 9400;
+  height: 8rem;
+  width: 10rem;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 3.6rem;
+  right: 0;
+  /*transition: 0.4s;*/ }
+  .menu_btn_box.off {
+    background-image: url("../img/btn_menu_open.svg"); }
+  .menu_btn_box.on {
+    background-image: url("../img/btn_menu_close.svg"); }
+
+.menu_blank {
+  z-index: 9200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100lvh;
+  background-color: #4e3c32;
+  justify-content: center; }
+  .menu_blank > .box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 12.5rem; }
+  .menu_blank span {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; }
+    .menu_blank span a {
+      color: white;
+      width: 100%;
+      font-size: 3.6rem;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      margin: 1em;
+      position: relative;
+      padding-bottom: 0.3em; }
+      .menu_blank span a::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: 0.2s;
+        background-size: contain;
+        background-repeat: repeat-x;
+        background-position: center; }
+      .menu_blank span a.p00::after {
+        background-image: url("../img/h/bd_dot_00.svg"); }
+      .menu_blank span a.p01::after {
+        background-image: url("../img/h/bd_dot_01.svg"); }
+      .menu_blank span a.p02::after {
+        background-image: url("../img/h/bd_dot_02.svg"); }
+      .menu_blank span a.p03::after {
+        background-image: url("../img/h/bd_dot_03.svg"); }
+      .menu_blank span a:hover {
+        color: yellow; }
+    .menu_blank span::after {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: url("../img/ic01.svg") center/cover no-repeat; }
+    .menu_blank span:last-child::after {
+      content: none; }
+  .menu_blank.off {
+    display: none;
+    opacity: 0; }
+  .menu_blank.on {
+    display: flex;
+    opacity: 1; }
+
+/*
+body {
+	&.page00 .header_main a.p00 ,
+	&.page01 .header_main a.p01 ,
+	&.page02 .header_main a.p02 ,
+	&.page03 .header_main a.p03 {pointer-events: none; color: $col4;}
+}
+*/
+/*---------------------------------------------------------------------------BP1920*/
+/*---------------------------------------------------------------------------BP1600*/
+/*---------------------------------------------------------------------------BP1280*/
+/*---------------------------------------------------------------------------BP1024*/
+/*---------------------------------------------------------------------------BP960*/
+/*---------------------------------------------------------------------------BP896*/
+/*---------------------------------------------------------------------------BP768*/
+@media (max-width: 768px) {
+  .header_main span a {
+    font-size: 2.4rem; }
+
+  .header_main > .box {
+    min-width: 17.5rem; }
+
+  body.page00 .header_main span.p01, body.page00 .header_main span.p02, body.page00 .header_main span.p03 {
+    display: none; }
+
+  body.page01 .header_main span.p00, body.page01 .header_main span.p02, body.page01 .header_main span.p03 {
+    display: none; }
+
+  body.page02 .header_main span.p00, body.page02 .header_main span.p01, body.page02 .header_main span.p03 {
+    display: none; }
+
+  body.page03 .header_main span.p00, body.page03 .header_main span.p01, body.page03 .header_main span.p02 {
+    display: none; }
+
+  .menu_btn_box {
+    display: block; } }
+/*---------------------------------------------------------------------------BP620*/
+@media (max-width: 620px) {
+  header > .box {
+    height: 14rem; }
+
+  .header_main > .box {
+    padding: 0 1.5rem 1.4rem; } }
+/*---------------------------------------------------------------------------BP480*/
